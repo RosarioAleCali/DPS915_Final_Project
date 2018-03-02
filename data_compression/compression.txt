@@ -1,0 +1,14 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ns/call  ns/call  name    
+ 47.64      0.91     0.91                             compress(std::string, int, std::string)
+ 39.27      1.66     0.75 28552683    26.27    26.27  show_usage()
+  6.81      1.79     0.13  2431472    53.47    53.47  convert_int_to_bin(int)
+  3.66      1.86     0.07  2431472    28.79    55.06  std::__detail::_Map_base<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, true, std::_Hashtable<std::string, std::pair<std::string const, int>, std::allocator<std::pair<std::string const, int> >, std::_Select1st<std::pair<std::string const, int> >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true> >::operator[](std::string const&)
+  2.62      1.91     0.05                             convert_char_to_string(char const*, int)
+  0.00      1.91     0.00     3841     0.00     0.00  std::__detail::_Hashtable_iterator<std::pair<std::string const, int>, false, false> std::_Hashtable<std::string, std::pair<std::string const, int>, std::allocator<std::pair<std::string const, int> >, std::_Select1st<std::pair<std::string const, int> >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true>::_M_insert_bucket<std::pair<std::string, unsigned int> >(std::pair<std::string, unsigned int>&&, unsigned int, unsigned int)
+  0.00      1.91     0.00      256     0.00     0.00  std::__detail::_Hashtable_iterator<std::pair<std::string const, int>, false, false> std::_Hashtable<std::string, std::pair<std::string const, int>, std::allocator<std::pair<std::string const, int> >, std::_Select1st<std::pair<std::string const, int> >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true>::_M_insert_bucket<std::pair<std::string, int> >(std::pair<std::string, int>&&, unsigned int, unsigned int)
+  0.00      1.91     0.00      256     0.00    26.27  std::__detail::_Map_base<std::string, std::pair<std::string const, int>, std::_Select1st<std::pair<std::string const, int> >, true, std::_Hashtable<std::string, std::pair<std::string const, int>, std::allocator<std::pair<std::string const, int> >, std::_Select1st<std::pair<std::string const, int> >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true> >::operator[](std::string&&)
+  0.00      1.91     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z18convert_int_to_bini
