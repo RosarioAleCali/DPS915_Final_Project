@@ -1,0 +1,12 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 41.33      0.31     0.31                             decompress(std::string, int, std::string)
+ 20.00      0.46     0.15       11    13.64    13.64  show_usage()
+ 16.00      0.58     0.12  6529533     0.00     0.00  std::__detail::_Map_base<unsigned int, std::pair<unsigned int const, std::string>, std::_Select1st<std::pair<unsigned int const, std::string> >, true, std::_Hashtable<unsigned int, std::pair<unsigned int const, std::string>, std::allocator<std::pair<unsigned int const, std::string> >, std::_Select1st<std::pair<unsigned int const, std::string> >, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true> >::operator[](unsigned int const&)
+ 10.67      0.66     0.08        9     8.89    22.53  std::_Hashtable<unsigned int, std::pair<unsigned int const, std::string>, std::allocator<std::pair<unsigned int const, std::string> >, std::_Select1st<std::pair<unsigned int const, std::string> >, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true>::_M_rehash(unsigned int)
+  8.00      0.72     0.06                             convert_char_to_string(char const*, int)
+  4.00      0.75     0.03  2176681     0.00     0.00  std::__detail::_Hashtable_iterator<std::pair<unsigned int const, std::string>, false, false> std::_Hashtable<unsigned int, std::pair<unsigned int const, std::string>, std::allocator<std::pair<unsigned int const, std::string> >, std::_Select1st<std::pair<unsigned int const, std::string> >, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true>::_M_insert_bucket<std::pair<unsigned int, std::string> >(std::pair<unsigned int, std::string>&&, unsigned int, unsigned int)
+  0.00      0.75     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z18convert_int_to_bini
