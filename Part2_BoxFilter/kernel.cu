@@ -27,32 +27,43 @@ void blur(unsigned char* input_image, unsigned char* output_image, int width, in
 				}
 			}
 		}
-		output_image[offset * 3] = output_red / hits;
-		output_image[offset * 3 + 1] = output_green / hits;
-		output_image[offset * 3 + 2] = output_blue / hits;
+		output_image[offset * 3] = static_cast<unsigned char>(output_red / hits);
+		output_image[offset * 3 + 1] = static_cast<unsigned char>(output_green / hits);
+		output_image[offset * 3 + 2] = static_cast<unsigned char>(output_blue / hits);
 	}
 }
 
+void filter(const Mat& input, Mat& output, int width, int height, int neighbour)
+{
+	//Calculate total number of bytes of input and output image
+	const int colorBytes = input.step * input.rows;
+	const int grayBytes = output.step * output.rows;
 
-void filter(unsigned char* input_image, unsigned char* output_image, int width, int height, int neighbour) {
+	unsigned char *d_input, *d_output;
 
-	unsigned char* dev_input;
-	unsigned char* dev_output;
-	cudaMalloc((void**)&dev_input, width*height * 3 * sizeof(unsigned char));
-	cudaMemcpy(dev_input, input_image, width*height * 3 * sizeof(unsigned char), cudaMemcpyHostToDevice);
+	//Allocate device memory
+	cudaMalloc((void**)&d_input, width*height * 3 * sizeof(unsigned char));
+	cudaMalloc((void**)&d_output, width*height * 3 * sizeof(unsigned char));
 
-	cudaMalloc((void**)&dev_output, width*height * 3 * sizeof(unsigned char));
+	//Copy data from OpenCV input image to device memory
+	cudaMemcpy(d_input, input.ptr(), width*height * 3 * sizeof(unsigned char), cudaMemcpyHostToDevice);
+	//cudaMemcpy(d_input, input.ptr(), colorBytes, cudaMemcpyHostToDevice);
+
 
 	dim3 blockDims(512, 1, 1);
+	//Calculate grid size to cover the whole image
+
 	dim3 gridDims((unsigned int)ceil((double)(width*height * 3 / blockDims.x)), 1, 1);
+	//Launch the color conversion kernel
+	blur << <gridDims, blockDims >> >(d_input, d_output, input.cols, input.rows, neighbour);
 
-	blur << <gridDims, blockDims >> >(dev_input, dev_output, width, height, neighbour);
+	//Synchronize to check for any kernel launch errors
+	cudaDeviceSynchronize();
 
+	//Copy back data from destination device meory to OpenCV output image
 
-	cudaMemcpy(output_image, dev_output, width*height * 3 * sizeof(unsigned char), cudaMemcpyDeviceToHost);
-
-	cudaFree(dev_input);
-	cudaFree(dev_output);
-
+	cudaMemcpy(output.ptr(), d_output, width*height * 3 * sizeof(unsigned char), cudaMemcpyDeviceToHost);
+	//Free the device memory
+	cudaFree(d_input);
+	cudaFree(d_output);
 }
-
