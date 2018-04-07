@@ -9,10 +9,10 @@
     track possible vehicles in the frames, and encode it again
 
     Compile using the following command:
-    g++ -std=c++11 -O3 -I <path>/dlib-19.9/  <path>/dlib-19.9/dlib/all/source.cpp -lpthread -lX11 vehicle_detection.cpp -lpng -DDLIB_PNG_SUPPORT -o vehicleDetector
+    g++ -std=c++11 -O3 -I <path>/dlib-19.9/  <path>/dlib-19.9/dlib/all/source.cpp -lpthread -lX11 vehicleDetection.cpp -lpng -DDLIB_PNG_SUPPORT -o vehicleDetector
 
     Example:
-    g++ -std=c++11 -O3 -I /home/rosarioalecali/dlib-19.9/  /home/rosarioalecali/dlib-19.9/dlib/all/source.cpp -lpthread -lX11 vehicle_detection.cpp -lpng -DDLIB_PNG_SUPPORT -o vehicleDetector
+    g++ -std=c++11 -O3 -I /home/rosarioalecali/dlib-19.9/  /home/rosarioalecali/dlib-19.9/dlib/all/source.cpp -lpthread -lX11 vehicleDetection.cpp -lpng -DDLIB_PNG_SUPPORT -o vehicleDetector
 
     Note, the following programs and libraries need to be installed
     for a correct usage:
