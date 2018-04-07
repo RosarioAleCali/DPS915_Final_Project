@@ -1,0 +1,14 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 47.03      8.24     8.24        1     8.24    11.15  prefixSum(std::vector<int, std::allocator<int> >&, int, std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >, std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >)
+ 29.39     13.39     5.15 499999999     0.00     0.00  _ZNSt6vectorIiSaIiEE12emplace_backIJiEEERiDpOT_
+ 17.41     16.44     3.05        4     0.76     1.83  setRandArr(std::vector<int, std::allocator<int> >&, int)
+  2.63     16.90     0.46                             saxpyAlg(int, std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >, std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >)
+  2.34     17.31     0.41                             stdSort(std::vector<int, std::allocator<int> >&, int, std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >, std::chrono::time_point<std::chrono::_V2::steady_clock, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> > >)
+  1.20     17.52     0.21      112     0.00     0.00  _ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_
+  0.00     17.52     0.00        5     0.00     0.00  printTiming(char const*, std::chrono::duration<long long, std::ratio<1ll, 1000000000ll> >)
+  0.00     17.52     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z10setRandArrRSt6vectorIiSaIiEEi
+  0.00     17.52     0.00        1     0.00     0.00  void std::__insertion_sort<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_less_iter)
